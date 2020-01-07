@@ -7,7 +7,7 @@ const Todo = props => (
   <li>
     <input type="checkbox" />
     <button>Delete</button>
-    <span> {props.text}</span>
+    <span> {props.todo.text}</span>
   </li>
 );
 
@@ -29,7 +29,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <button>Add Todo</button>
+        <button onClick={() => this.addTodo()}>Add Todo</button>
         <ul>
           {this.state.todos.map(todo => (
             <Todo todo={todo} />
